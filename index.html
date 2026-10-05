@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rakshita M Patgar | CSE Student Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8fc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #0b1f3a;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #7dd3fc;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0b1f3a, #155e9a);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #7dd3fc;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #dbeafe;
+            margin-bottom: 18px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #7dd3fc;
+            color: #0b1f3a;
+        }
+
+        .primary-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border: 1px solid #7dd3fc;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #7dd3fc;
+            color: #0b1f3a;
+        }
+
+        /* General Sections */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        /* About */
+        .about-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+        }
+
+        .about-container p {
+            margin-bottom: 18px;
+            color: #475569;
+        }
+
+        .education {
+            margin-top: 25px;
+            padding: 20px;
+            background: #eff6ff;
+            border-left: 4px solid #2196d3;
+            border-radius: 8px;
+        }
+
+        .education strong {
+            color: #0b1f3a;
+        }
+
+        .career-goal {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #dbeafe;
+        }
+
+        .career-goal h3 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 28px;
+            border-radius: 15px;
+            border-top: 4px solid #2196d3;
+            box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+        }
+
+        /* Clear activity label */
+        .activity-label {
+            display: inline-block;
+            background: #0b1f3a;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+
+        .project-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .project-card p {
+            color: #475569;
+            margin-bottom: 18px;
+        }
+
+        .project-card ul {
+            margin: 10px 0 20px 20px;
+            color: #475569;
+        }
+
+        .project-link {
+            color: #0b70b7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Skills */
+        .skills-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .skill {
+            background: white;
+            color: #0b1f3a;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #bfdbfe;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #dbeafe;
+            transform: translateY(-2px);
+        }
+
+        /* Contact */
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            background: #0b1f3a;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        .contact-box h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #dbeafe;
+            margin-bottom: 20px;
+        }
+
+        .github-btn {
+            display: inline-block;
+            background: #7dd3fc;
+            color: #0b1f3a;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .github-btn:hover {
+            background: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #061426;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-container {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            .project-card {
+                padding: 22px;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Rakshita M Patgar</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <h1>Hi, I'm <span>Rakshita</span></h1>
+
+            <h2>B.Tech – Computer Science and Engineering</h2>
+
+            <p>
+                3rd Semester Student at REVA University
+            </p>
+
+            <p>
+                I am a Computer Science and Engineering student interested
+                in software development, web development, Artificial
+                Intelligence, and Machine Learning.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn primary-btn">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- About Section -->
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>A little about my learning journey</p>
+        </div>
+
+        <div class="about-container">
+
+            <p>
+                I am a Computer Science and Engineering student interested
+                in software development, web development, Artificial
+                Intelligence, and Machine Learning.
+            </p>
+
+            <p>
+                I enjoy learning programming through practical activities
+                and coding practice. I am currently improving my skills in
+                programming, databases, Git and GitHub, web development,
+                and problem solving.
+            </p>
+
+            <div class="education">
+                <strong>Education</strong><br>
+                B.Tech – Computer Science and Engineering<br>
+                3rd Semester<br>
+                REVA University
+            </div>
+
+            <div class="career-goal">
+
+                <h3>Career Goal</h3>
+
+                <p>
+                    My career goal is to become a skilled software developer
+                    and gain practical industry experience through internships
+                    and projects. I want to improve my programming,
+                    problem-solving, web development, and AI/ML skills and
+                    build a strong technical portfolio.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>Projects & Activities</h2>
+
+            <p>
+                Practical learning and coding activities
+            </p>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <!-- Activity 1 -->
+            <div class="project-card">
+
+                <div class="activity-label">
+                    Activity 1
+                </div>
+
+                <h3>Development Environment Setup</h3>
+
+                <p>
+                    I set up my development environment using Visual Studio
+                    Code. I configured the C/C++ development environment
+                    using MSYS2 and the GCC/G++ compiler.
+                </p>
+
+                <p>
+                    I created and ran a simple Hello World program to verify
+                    that the development environment was working correctly.
+                </p>
+
+                <a
+                    href="https://github.com/Rakshita510/hello.c"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Hello World Repository →
+                </a>
+
+            </div>
+
+
+            <!-- Activity 2 -->
+            <div class="project-card">
+
+                <div class="activity-label">
+                    Activity 2
+                </div>
+
+                <h3>Git and GitHub Setup</h3>
+
+                <p>
+                    I learned the basics of Git and GitHub for managing
+                    programming projects.
+                </p>
+
+                <p>
+                    I created a GitHub repository and practiced making
+                    changes, committing them, and pushing my work to GitHub.
+                    This helped me understand version control and how
+                    projects can be stored and shared online.
+                </p>
+
+            </div>
+
+
+            <!-- Activity 3 -->
+            <div class="project-card">
+
+                <div class="activity-label">
+                    Activity 3
+                </div>
+
+                <h3>GitLens and Live Share</h3>
+
+                <p>
+                    I used GitLens and Visual Studio Code Live Share to learn
+                    about collaborative programming.
+                </p>
+
+                <p>
+                    I worked with another student using Live Share for pair
+                    programming and collaborated on the Hello World activity.
+                    I also used GitLens to understand Git-related information
+                    and repository history.
+                </p>
+
+            </div>
+
+
+            <!-- Activity 4 -->
+            <div class="project-card">
+
+                <div class="activity-label">
+                    Activity 4
+                </div>
+
+                <h3>LeetCode Practice Repository</h3>
+
+                <p>
+                    I created a GitHub repository to organize and document
+                    my LeetCode problem-solving practice.
+                </p>
+
+                <ul>
+                    <li>Two Sum</li>
+                    <li>Valid Palindrome</li>
+                    <li>Best Time to Buy and Sell Stock</li>
+                    <li>Binary Search</li>
+                    <li>Valid Parentheses</li>
+                    <li>Min Stack</li>
+                </ul>
+
+                <a
+                    href="https://github.com/Rakshita510/leetcode-solutions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View LeetCode Repository →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>Technical Skills</h2>
+
+            <p>
+                Technologies and areas I am learning
+            </p>
+
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill">C</div>
+            <div class="skill">C++</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Django</div>
+            <div class="skill">HTML and CSS</div>
+            <div class="skill">Git and GitHub</div>
+            <div class="skill">Visual Studio Code</div>
+            <div class="skill">Basic Web Development</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Data Structures and Algorithms</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+
+        <div class="section-title">
+
+            <h2>Contact</h2>
+
+            <p>
+                Let's connect through GitHub
+            </p>
+
+        </div>
+
+        <div class="contact-box">
+
+            <h3>Rakshita M Patgar</h3>
+
+            <p>
+                Computer Science and Engineering Student
+                at REVA University
+            </p>
+
+            <a
+                href="https://github.com/Rakshita510"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="github-btn"
+            >
+                Visit My GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Rakshita M Patgar | B.Tech – Computer Science and Engineering
+        </p>
+
+    </footer>
+
+</body>
+</html>
